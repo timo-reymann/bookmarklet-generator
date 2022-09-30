@@ -8,7 +8,6 @@
     $: {
         ((value) => sessionStorage.setItem("code", value))(value)
     }
-
 </script>
 <header>
     <h1>Bookmarklet Generator</h1>

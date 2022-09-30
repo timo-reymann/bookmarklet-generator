@@ -1,14 +1,16 @@
-<script>
+<script lang="ts">
     export let code = ""
+
+    $: {
+        (() => updatePrefixedCode())(code)
+    }
+
     let prefixedCode = ""
     const updatePrefixedCode = () => {
         const wrapped = `(function() {
             ${code}
         })()`
         prefixedCode = `javascript:${encodeURI(wrapped)}`
-    }
-    $: {
-        updatePrefixedCode(code)
     }
 
     const execute = () => eval(code)
