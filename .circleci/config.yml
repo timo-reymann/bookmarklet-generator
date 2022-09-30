@@ -26,6 +26,8 @@ jobs:
       - run:
           name: Deploy to GitHub pages
           command: >
+            git config --global user.email "no-reply@timo-reymann.de"
+            git config --global user.name "CircleCI Pipeline"
             npx gh-pages@2.0.1 --dist dist/ --message "docs: Update github pages [ci skip]"
 
 workflows:
