@@ -35,7 +35,11 @@
             wordWrapColumn: 150,
             wrappingIndent: 'indent',
             fontSize: 16,
-            quickSuggestions: true
+            quickSuggestions: true,
+            padding: {
+                top: 20,
+                bottom: 20
+            }
         });
 
         monacoEditor.getModel().onDidChangeContent(e => value = monacoEditor.getValue())

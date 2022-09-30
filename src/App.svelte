@@ -1,6 +1,7 @@
 <script lang="ts">
     import Editor from "./lib/Editor.svelte";
     import BookmarkletCode from "./lib/BookmarkletCode.svelte";
+    import ForkMeCorner from "./lib/ForkMeCorner.svelte";
 
     let value = sessionStorage.getItem("code") || "// Replace with your code \n\nalert('Hello World')\n"
 
@@ -17,6 +18,7 @@
         <Editor bind:value={value}></Editor>
     </div>
     <BookmarkletCode bind:code={value}></BookmarkletCode>
+    <ForkMeCorner></ForkMeCorner>
 </main>
 
 <style>
