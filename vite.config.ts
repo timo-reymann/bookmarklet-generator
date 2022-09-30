@@ -9,5 +9,6 @@ export default defineConfig({
       `${prefix}/language/typescript/ts.worker`,
       `${prefix}/editor/editor.worker`
     ]
-  }
+  },
+  base: '/bookmarklet-generator'
 })
