@@ -1,28 +1,15 @@
 <script lang="ts">
+    import 'monaco-editor/esm/vs/editor/editor.all.js';
+
+    import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
+    import "monaco-editor/esm/vs/language/typescript/tsMode"
     import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
+
+    import {editor} from "monaco-editor/esm/vs/editor/editor.api"
     import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
 
-    import 'monaco-editor/esm/vs/editor/editor.all.js';
-    import {editor} from "monaco-editor/esm/vs/editor/editor.api"
-
-    import "monaco-editor/esm/vs/editor/contrib/inlineCompletions/browser/inlineCompletionsModel"
-    import 'monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js';
-
-    import 'monaco-editor/esm/vs/editor/standalone/browser/iPadShowKeyboard/iPadShowKeyboard.js';
-
-    import 'monaco-editor/esm/vs/editor/standalone/browser/inspectTokens/inspectTokens.js';
-
-    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneHelpQuickAccess.js';
-    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneGotoLineQuickAccess.js';
-    import "monaco-editor/esm/vs/editor/standalone/browser/inspectTokens/inspectTokens"
-    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneGotoSymbolQuickAccess.js';
-    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneCommandsQuickAccess.js';
-    import 'monaco-editor/esm/vs/editor/contrib/documentSymbols/browser/documentSymbols';
-
-    import 'monaco-editor/esm/vs/editor/standalone/browser/referenceSearch/standaloneReferenceSearch.js';
-    import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
-
     import {onMount} from 'svelte';
+
     let divEl: HTMLDivElement = null;
 
     export let value = ''

@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Deploy to GitHub pages
           command: >
-            npx gh-pages@2.0.1 --dist gh-pages/ --message "docs: Update github pages [ci skip]"
+            npx gh-pages@2.0.1 --dist build/ --message "docs: Update github pages [ci skip]"
 
 workflows:
   main:
