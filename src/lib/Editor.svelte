@@ -1,11 +1,29 @@
 <script lang="ts">
-    import type monaco from 'monaco-editor';
-    import {onMount} from 'svelte';
     import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
+    import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
 
+    import 'monaco-editor/esm/vs/editor/editor.all.js';
+    import {editor} from "monaco-editor/esm/vs/editor/editor.api"
+
+    import "monaco-editor/esm/vs/editor/contrib/inlineCompletions/browser/inlineCompletionsModel"
+    import 'monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js';
+
+    import 'monaco-editor/esm/vs/editor/standalone/browser/iPadShowKeyboard/iPadShowKeyboard.js';
+
+    import 'monaco-editor/esm/vs/editor/standalone/browser/inspectTokens/inspectTokens.js';
+
+    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneHelpQuickAccess.js';
+    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneGotoLineQuickAccess.js';
+    import "monaco-editor/esm/vs/editor/standalone/browser/inspectTokens/inspectTokens"
+    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneGotoSymbolQuickAccess.js';
+    import 'monaco-editor/esm/vs/editor/standalone/browser/quickAccess/standaloneCommandsQuickAccess.js';
+    import 'monaco-editor/esm/vs/editor/contrib/documentSymbols/browser/documentSymbols';
+
+    import 'monaco-editor/esm/vs/editor/standalone/browser/referenceSearch/standaloneReferenceSearch.js';
+    import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
+
+    import {onMount} from 'svelte';
     let divEl: HTMLDivElement = null;
-    let editor: monaco.editor.IStandaloneCodeEditor;
-    let Monaco;
 
     export let value = ''
 
@@ -13,12 +31,15 @@
         // @ts-ignore
         self.MonacoEnvironment = {
             getWorker: function (_moduleId: any, label: string) {
-                return new tsWorker();
+                if (label === 'typescript' || label === 'javascript') {
+                    return new tsWorker()
+                }
+                return new editorWorker()
             }
         };
 
-        Monaco = await import('monaco-editor');
-        editor = Monaco.editor.create(divEl, {
+
+        let monacoEditor = editor.create(divEl, {
             value,
             language: 'javascript',
             theme: 'vs-dark',
@@ -26,13 +47,14 @@
             wordWrap: 'wordWrapColumn',
             wordWrapColumn: 150,
             wrappingIndent: 'indent',
-            fontSize: 16
+            fontSize: 16,
+            quickSuggestions: true
         });
 
-        editor.getModel().onDidChangeContent(e => value = editor.getValue())
+        monacoEditor.getModel().onDidChangeContent(e => value = monacoEditor.getValue())
 
         return () => {
-            editor.dispose();
+            monacoEditor.dispose();
         };
     });
 </script>

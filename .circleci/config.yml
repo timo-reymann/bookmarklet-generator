@@ -1,0 +1,38 @@
+version: 2.1
+
+orbs:
+  node:
+
+jobs:
+  build:
+    executor:
+      name: node/default
+      tag: 18.9.1
+    steps:
+      - checkout
+      - node/install-packages
+      - build
+      - run:
+          name: Build with vite
+          command: yarn build
+      - persist_to_workspace:
+          path: dist/
+  deploy:
+    executor: node/default
+    steps:
+      - run:
+          name: Deploy to GitHub pages
+          command: >
+            npx gh-pages@2.0.1 --dist gh-pages/ --message "docs: Update github pages [ci skip]"
+
+workflows:
+  main:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
