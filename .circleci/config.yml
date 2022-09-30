@@ -20,6 +20,8 @@ jobs:
   deploy:
     executor: node/default
     steps:
+      - attach_workspace:
+          at: .
       - run:
           name: Deploy to GitHub pages
           command: >
