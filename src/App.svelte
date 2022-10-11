@@ -3,10 +3,28 @@
     import BookmarkletCode from "./lib/BookmarkletCode.svelte";
     import ForkMeCorner from "./lib/ForkMeCorner.svelte";
 
-    let value = sessionStorage.getItem("code") || "// Replace with your code \n\nalert('Hello World')\n"
+    const getWindowURL = () => new URL(window.location)
+
+    const updateCode = (code: string) => {
+        const url = getWindowURL()
+        url.searchParams.set("code", btoa(code))
+        history.replaceState(null, "", url.toString())
+    }
+
+    const getCodeFromURL = () => {
+        const url = getWindowURL()
+
+        if(!url.searchParams.has("code")) {
+            return "// Replace with your code \n\nalert('Hello World')\n";
+        }
+
+        return atob(url.searchParams.get("code"))
+    }
+
+    let value = getCodeFromURL()
 
     $: {
-        ((value) => sessionStorage.setItem("code", value))(value)
+        updateCode(value)
     }
 </script>
 <header>
