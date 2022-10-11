@@ -61,6 +61,12 @@
     pre {
         font-size: 15px;
     }
+
+    @media (prefers-color-scheme: dark) {
+        pre {
+            background: #444c56;
+        }
+    }
 </style>
 
 <div class="wrapper">
