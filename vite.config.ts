@@ -10,5 +10,5 @@ export default defineConfig({
       `${prefix}/editor/editor.worker`
     ]
   },
-  base: '/bookmarklet-generator'
+  base: '/'
 })
