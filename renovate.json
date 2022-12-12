@@ -7,6 +7,10 @@
     {
       "matchPackageNames": ["svelte-preprocess"],
       "allowedVersions": "<5"
-      },
+     },
+     {
+      "matchPackageNames": ["@sveltejs/vite-plugin-svelte"],
+      "allowedVersions": "<3"
+     }
   ],
 }
