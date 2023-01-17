@@ -12,5 +12,5 @@
       "matchPackageNames": ["@sveltejs/vite-plugin-svelte"],
       "allowedVersions": "<3"
      }
-  ],
+  ]
 }
