@@ -544,10 +544,10 @@ strip-indent@^3.0.0:
   dependencies:
     min-indent "^1.0.0"
 
-svelte-check@3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-3.8.2.tgz#7bfdff18536b70cbcebae4935b574eb44b5b5557"
-  integrity sha512-n6bVsE71RPuMXZz1CalD2fXO0RIyEDHn1YdGhcFEwZrwc/HoS5wWoEvEe+mcL9tivCTRtQIdbxLLStfIHFOX+Q==
+svelte-check@3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-3.8.3.tgz#51693faa31ca6b8400012b85db21d3f00f7d2d26"
+  integrity sha512-X1+fTyB3MjVXz0IogrUbdkKvIFMhRVQn1nUW0uF4FRwq69i+7WGtwXrMBhtceV+Rc55iL+8HVEJoEp0CSeosbg==
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.17"
     chokidar "^3.4.1"
