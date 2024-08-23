@@ -20,6 +20,6 @@
     "vite": "4.5.3"
   },
   "dependencies": {
-    "monaco-editor": "0.50.0"
+    "monaco-editor": "0.51.0"
   }
 }
