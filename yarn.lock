@@ -611,10 +611,10 @@ typescript@^5.0.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
   integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
-vite@4.5.12:
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.12.tgz#48f48dbcf789722765e91bc32a99cb66c628eadc"
-  integrity sha512-qrMwavANtSz91nDy3zEiUHMtL09x0mniQsSMvDkNxuCBM1W5vriJ22hEmwTth6DhLSWsZnHBT0yHFAQXt6efGA==
+vite@4.5.13:
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.13.tgz#778534a947112c6c455e89737730fae5d458a294"
+  integrity sha512-Hgp8IF/yZDzKsN1hQWOuQZbrKiaFsbQud+07jJ8h9m9PaHWkpvZ5u55Xw5yYjWRXwRQ4jwFlJvY7T7FUJG9MCA==
   dependencies:
     esbuild "^0.18.10"
     postcss "^8.4.27"
